@@ -34,14 +34,39 @@ const server = http.createServer((req, res) => {
                 res.end()
             }
         })
-    }else if (method === "post" && path === "/institute") {
+    } else if (method === "post" && path === "/institute") {
         let body = '';
 
-        req.on("data" , (chunk) => {
+        req.on("data", (chunk) => {
             body += chunk
+        });
+
+        fs.readFile(datapath, "utf-8", (err, data) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'application/json' })
+                res.end(JSON.stringify({ error: err.message }))
+
+            }
+
+            console.log(body);
+
+
+            const alldata = JSON.parse(data)
+            alldata.push(JSON.parse(body))
+            console.log(alldata);
+
+            fs.writeFile(datapath, JSON.stringify(alldata), (err) => {
+                if (err) {
+                    res.writeHead(500, { 'Content-Type': 'application/json' })
+                    res.end(JSON.stringify({ error: err.message }))
+
+                }
+
+                res.end(JSON.stringify({ message: "Data Send Successfully" }))
+            })
         })
-         
-        console.log(body);
+    } else if (method === "delete" && path === "/institute") {
+
 
     }
 })
