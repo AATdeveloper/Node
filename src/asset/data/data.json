@@ -1,1 +1,27 @@
-[{"id":101,"name":"ABC IT INSTITUTE","seat":200},{"id":102,"name":"XYZ IT INSTITUTE","seat":150},{"id":103,"name":"PQR IT INSTITUTE","seat":100},{"id":104,"name":"FGD IT INSTITUTE","seat":300},{"id":201,"name":"RST INSTITUTE","seat":142}]
+[
+    {
+        "id": 101,
+        "name": "SMC INSTITUTE",
+        "seat": 105
+    },
+    {
+        "id": 102,
+        "name": "XYZ IT INSTITUTE",
+        "seat": 150
+    },
+    {
+        "id": 103,
+        "name": "PQR IT INSTITUTE",
+        "seat": 100
+    },
+    {
+        "id": 104,
+        "name": "FGD IT INSTITUTE",
+        "seat": 300
+    },
+    {
+        "id": 201,
+        "name": "RST INSTITUTE",
+        "seat": 142
+    }
+]
